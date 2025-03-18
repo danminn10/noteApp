@@ -1,0 +1,146 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color7"
+    android:orientation="vertical"
+    tools:context=".NotesTakerActivity">
+
+    <!-- Toolbar nằm ở trên cùng -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_notes"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color13"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/light_grey">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Tiêu đề ứng dụng -->
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp" />
+
+
+            <!-- Nút lưu -->
+            <ImageView
+                android:id="@+id/imageView_save"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_save"
+                android:contentDescription="Save Note" />
+
+            <!-- Nút xuất file Word -->
+            <ImageView
+                android:id="@+id/imageView_export"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_toStartOf="@id/imageView_save"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_export"
+                android:contentDescription="Export Note" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Nội dung ghi chú -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:elevation="4dp">
+
+            <!-- Tiêu đề ghi chú -->
+            <EditText
+                android:id="@+id/editText_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_grey"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:background="@android:color/transparent"
+                android:padding="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <!-- Spinner chọn danh mục -->
+                <Spinner
+                    android:id="@+id/spinner_category"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_background"
+                    android:padding="8dp"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Nút thêm danh mục -->
+                <ImageView
+                    android:id="@+id/imageView_add_category"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="Add Category"
+                    android:src="@drawable/ic_add" />
+            </LinearLayout>
+
+
+            <!-- Dòng phân cách -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="8dp"
+                android:background="@color/light_grey" />
+
+            <!-- Nội dung ghi chú -->
+            <EditText
+                android:id="@+id/editText_notes"
+                android:layout_width="match_parent"
+                android:layout_height="263dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:hint="@string/add_notes"
+                android:inputType="textMultiLine"
+                android:minHeight="200dp"
+                android:padding="8dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_grey"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

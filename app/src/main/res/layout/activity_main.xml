@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main"
+    tools:context=".MainActivity">
+
+    <!-- Tiêu đề ứng dụng -->
+    <RelativeLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentTop="true"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/color11"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Spinner để chọn danh mục -->
+    <Spinner
+        android:id="@+id/spinner_filter_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_container"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/spinner_background"
+        android:padding="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:popupBackground="@color/white" />
+
+    <!-- Thanh tìm kiếm -->
+    <RelativeLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner_filter_category"
+        android:layout_margin="16dp"
+        android:background="@color/color6"
+        android:padding="8dp"
+        android:elevation="4dp">
+
+        <EditText
+            android:id="@+id/editText_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/icon_search"
+            android:hint="Search Notes..."
+            android:textColor="@color/white"
+            android:textColorHint="@color/color16"
+            android:background="@null"
+            android:padding="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/icon_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Search"
+            app:tint="@color/white" />
+    </RelativeLayout>
+
+    <!-- NestedScrollView chứa RecyclerView -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_container"
+        android:layout_above="@id/fab_button"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" />
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FloatingActionButton -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/orange"
+        app:elevation="8dp" />
+</RelativeLayout>

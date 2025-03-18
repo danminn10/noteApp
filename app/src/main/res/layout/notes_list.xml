@@ -1,0 +1,80 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notes_container"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_margin="8dp"
+    android:elevation="4dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Tiêu đề và biểu tượng ghim -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp">
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:id="@+id/textView_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Title"
+                android:textSize="18sp"
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingEnd="32dp" />
+
+            <!-- Biểu tượng ghim -->
+            <ImageView
+                android:id="@+id/imageView_pin"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="Pinned Icon"
+                android:src="@drawable/ic_pin"
+                android:padding="4dp" />
+        </RelativeLayout>
+
+        <!-- Nội dung ghi chú -->
+        <TextView
+            android:id="@+id/textView_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notes content goes here..."
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:maxLines="10"
+            android:ellipsize="end"
+            android:paddingBottom="8dp" />
+
+        <!-- Ngày tháng -->
+        <TextView
+            android:id="@+id/textView_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date goes here..."
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
