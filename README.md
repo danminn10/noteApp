@@ -24,13 +24,15 @@ NoteApp là một ứng dụng ghi chú đơn giản và hiệu quả, giúp b�
 ## Cài đặt
 
 1. **Clone repository**:
+   ```
+   bash
    git clone https://github.com/danminn10/NoteApp.git
    ```
-2. **Mở project bằng Android Studio**:
+3. **Mở project bằng Android Studio**:
    - Mở Android Studio và chọn "Open an existing project".
    - Dẫn đến thư mục chứa project vừa clone và chọn `build.gradle`.
 
-3. **Chạy ứng dụng**:
+4. **Chạy ứng dụng**:
    - Kết nối thiết bị Android hoặc sử dụng máy ảo.
    - Nhấn `Run` trong Android Studio để cài đặt và chạy ứng dụng.
 
